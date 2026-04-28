@@ -43,7 +43,9 @@ This design enables SKernel to deliver both **VM-level performance** and **proce
 
 ## 🏗️ Architecture Overview
 
-![SKernel Architecture](./SKernel_Architecture.png)
+<p align="center">
+  <img src="./SKernel_Architecture.png" alt="SKernel Architecture" width="600" />
+</p>
 
 ### Component Details
 
