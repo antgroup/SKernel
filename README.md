@@ -43,27 +43,7 @@ This design enables SKernel to deliver both **VM-level performance** and **proce
 
 ## 🏗️ Architecture Overview
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                         Guest OS (Non-Root Ring 0)               │
-│  ┌─────────────────────────────┬───────────────────────────────┐ │
-│  │      SKernel-D              │         SKernel-R              │ │
-│  │  ┌───────────┬───────────┐  │  ┌───────────┬──────────────┐ │ │
-│  │  │  Network  │ Filesystem│  │  │   CPU     │   Memory     │ │ │
-│  │  │   Stack   │  (EROFS)  │  │  │  Manager  │   Manager    │ │ │
-│  │  └───────────┴───────────┘  │  └───────────┴──────────────┘ │ │
-│  │                              │            │                   │ │
-│  │         syscall ABI-compliant shim                              │ │
-│  └─────────────────────────────┴───────────────────────────────┘ │
-│                              │                                     │
-│                    ┌─────────▼─────────┐                          │
-│                    │    SKernel-V      │  (Lightweight Hypervisor)│
-│                    │   (4.4K LoC)      │                          │
-│  ───────────────────────────────────────────────────────────────  │
-│  Root Ring 0       │    Host OS        │                          │
-│                    └───────────────────┘                          │
-└─────────────────────────────────────────────────────────────────┘
-```
+![SKernel Architecture](./SKernel_Architecture.pdf)
 
 ### Component Details
 
